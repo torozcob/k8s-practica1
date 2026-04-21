@@ -1,0 +1,47 @@
+1. Crear app index.js
+
+const http = require('http');
+const port = 3000;
+
+const server = http.createServer((req, res) => {
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  res.end('<h1>Hola desde Kubernetes 🚀</h1>');
+});
+
+server.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
+
+
+2. Cerar el package.json
+
+{
+  "name": "demo-app",
+  "version": "1.0.0",
+  "main": "index.js"
+}
+3. Crear Dockerfile
+
+
+FROM node:18-alpine
+WORKDIR /app
+COPY . .
+EXPOSE 3000
+CMD ["node", "index.js"]
+
+4. Built de la imagen
+
+docker build --no-cache -t demo-myapp .
+docker build -t demo-app .
+docker run -p 3000:3000 demo-app
+
+5. Probar App
+
+
+Pruebas internas en POD
+kubectl run test -n my-app --rm -it --image=curlimages/curl -- sh
+
+kubectl port-forward service/demo-app-service 8080:80 -n my-app
+
+kubectl rollout restart deployment demo-myapp -n my-app
+
