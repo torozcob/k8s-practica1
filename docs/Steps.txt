@@ -45,3 +45,33 @@ kubectl port-forward service/demo-app-service 8080:80 -n my-app
 
 kubectl rollout restart deployment demo-myapp -n my-app
 
+ArgoCD
+1oEBxyjwsvlI5JLW
+
+
+********** Subir proyecto a GitHub
+
+1. Abrir terminal en esa carpeta
+	cd "C:\Users\toroz\Documents\CURSOS\K8s\Practica1"
+2. Inicializar Git
+	git init
+3. Ver qué tienes (opcional pero útil)
+	git status
+4. Agregar archivos
+	git add .
+5. Crear commit
+	git commit -m "initial k8s manifests"
+6. Crear repo en GitHub
+	New repository
+	Nombre: k8s-practica1
+	NO agregues README
+7. Conectar tu carpeta al repo
+	git remote add origin https://github.com/TU-USUARIO/k8s-practica1.git
+8. Subirlo
+	git branch -M main
+	git push -u origin main
+9. Verificar
+	En GitHub debes ver tus archivos
+
+	
+
