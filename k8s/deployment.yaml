@@ -3,7 +3,8 @@ kind: Deployment
 metadata:
   name: demo-myapp
 spec:
-  replicas: 3
+  replicas: 2
+  revisionHistoryLimit: 1
   selector:
     matchLabels:
       app: demo-myapp

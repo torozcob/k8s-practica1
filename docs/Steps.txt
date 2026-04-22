@@ -48,8 +48,8 @@ kubectl rollout restart deployment demo-myapp -n my-app
 ArgoCD
 1oEBxyjwsvlI5JLW
 
-
-********** Subir proyecto a GitHub
+ 
+********** Subir proyecto a GitHub ***************
 
 1. Abrir terminal en esa carpeta
 	cd "C:\Users\toroz\Documents\CURSOS\K8s\Practica1"
@@ -72,6 +72,21 @@ ArgoCD
 	git push -u origin main
 9. Verificar
 	En GitHub debes ver tus archivos
+
+
+************* Actualizar Cambios en app **************
+
+1. Verifica qué cambió
+	git status
+2. Agrega el archivo al commit
+	git add k8s/deployment.yaml
+3. Crea el commit
+	git commit -m "scale deployment to 2 replicas"
+4. Sube a GitHub
+	git push origin main
+
+Inconsistencias origen destino
+	git push origin main --force
 
 	
 
